@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site d'Adam Allab - BUT SD</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Barre de navigation */
+    nav {
+      background-color: #1e3a8a;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav h2 {
+      color: white;
+      font-size: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Section Accueil / Présentation */
+    .hero {
+      background-color: #ffffff;
+      padding: 50px 30px;
+      text-align: center;
+      border-bottom: 2px solid #e5e5e5;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+      color: #1e3a8a;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 16px;
+      max-width: 800px;
+      margin: 0 auto 15px;
+    }
+
+    .liens-contact {
+      margin-top: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #1e3a8a;
+      color: white;
+      padding: 10px 18px;
+      margin: 5px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #162b65;
+    }
+
+    /* Contenu général pleine page */
+    .section {
+      padding: 40px 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    h2.titre-section {
+      color: #1e3a8a;
+      border-bottom: 2px solid #1e3a8a;
+      padding-bottom: 8px;
+      margin-bottom: 25px;
+      font-size: 22px;
+    }
+
+    /* Grille pour les projets */
+    .grille-cartes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .carte {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 20px;
+    }
+
+    .carte h3 {
+      font-size: 18px;
+      margin-bottom: 5px;
+      color: #222;
+    }
+
+    .carte .tag {
+      display: inline-block;
+      background: #eef2ff;
+      color: #1e3a8a;
+      font-size: 12px;
+      padding: 3px 8px;
+      border-radius: 3px;
+      margin-bottom: 10px;
+    }
+
+    .carte p {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    /* Bloc caché qui s'affiche au clic */
+    .details-cache {
+      display: none;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed #ccc;
+      font-size: 13px;
+    }
+
+    .btn-toggle {
+      background-color: #e5e7eb;
+      color: #333;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+
+    .btn-toggle:hover {
+      background-color: #d1d5db;
+    }
+
+    /* Section Compétences */
+    .grille-comp {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .col-comp {
+      flex: 1;
+      min-width: 250px;
+      background: white;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .col-comp h3 {
+      margin-bottom: 10px;
+      font-size: 16px;
+      color: #1e3a8a;
+    }
+
+    .col-comp ul {
+      padding-left: 20px;
+      font-size: 14px;
+    }
+
+    .col-comp li {
+      margin-bottom: 5px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #222;
+      color: #aaa;
+      text-align: center;
+      padding: 20px;
+      font-size: 13px;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <h2>Adam ALLAB</h2>
+    <ul>
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="#projets">Projets</a></li>
+      <li><a href="#formation">Formation</a></li>
+      <li><a href="#competences">Compétences</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- En-tête / Accueil -->
+  <section class="hero" id="accueil">
+    <h1>Adam ALLAB</h1>
+    <p><strong>Étudiant en 2ème année de BUT Science des Données</strong></p>
+    <p>
+      Recherche d'une alternance de 2 ans dans la région grenobloise à partir de septembre 2026.
+    </p>
+    <p style="font-style: italic; color: #555;">
+      "J'aime l'analyse, je cherche toujours à comprendre le sens caché derrière les données pour transformer des données brutes en décisions."
+    </p>
+
+    <div class="liens-contact">
+      <a href="mailto:adamsaidallab@gmail.com" class="btn">Me contacter par mail</a>
+      <a href="https://www.linkedin.com" target="_blank" class="btn">Voir mon LinkedIn</a>
+      <a href="tel:0652793013" class="btn">06 52 79 30 13</a>
+    </div>
+  </section>
+
+  <!-- Projets & Expériences -->
+  <div class="section" id="projets">
+    <h2 class="titre-section">Mes Projets & Expériences</h2>
+    
+    <div class="grille-cartes">
+
+      <!-- Carte 1 -->
+      <div class="carte">
+        <h3>Stage Informatique / SharePoint</h3>
+        <span class="tag">Enedis • Été 2026</span>
+        <p>Création et déploiement d'un espace de travail SharePoint pour fluidifier le partage de documents dans l'équipe.</p>
+        
+        <button class="btn-toggle" onclick="toggleDetails('proj1', this)">Voir plus</button>
+        
+        <div id="proj1" class="details-cache">
+          <ul>
+            <li>Gestion de l'arborescence et des accès.</li>
+            <li>Migration des fichiers et harmonisation du classement.</li>
+            <li>Conception de supports d'aide pour les utilisateurs.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Carte 2 -->
+      <div class="carte">
+        <h3>Base de Données "Bleu Pomme"</h3>
+        <span class="tag">Projet universitaire (SAE)</span>
+        <p>Modélisation et mise en place d'une base de données relationnelle pour la fabrication de sacs en cuir de pomme.</p>
+        
+        <button class="btn-toggle" onclick="toggleDetails('proj2', this)">Voir plus</button>
+        
+        <div id="proj2" class="details-cache">
+          <ul>
+            <li>Création de tables, relations et formulaires sur MS Access.</li>
+            <li>Requêtes SQL pour le calcul des coûts de revient.</li>
+            <li>Gestion automatisée des stocks de matières premières.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Carte 3 -->
+      <div class="carte">
+        <h3>Étude de marché "Bloom"</h3>
+        <span class="tag">Projet universitaire (SAE)</span>
+        <p>Analyse de la viabilité d'un lancement de produit cosmétique sur le territoire Bourgogne-Franche-Comté.</p>
+        
+        <button class="btn-toggle" onclick="toggleDetails('proj3', this)">Voir plus</button>
+        
+        <div id="proj3" class="details-cache">
+          <ul>
+            <li>Exploitation de données publiques (INSEE, Open Data).</li>
+            <li>Veille concurrentielle et matrice SWOT.</li>
+            <li>Rapport et présentation orale entièrement en anglais.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Formation -->
+  <div class="section" id="formation">
+    <h2 class="titre-section">Formation</h2>
+    <div class="carte" style="margin-bottom: 15px;">
+      <h3>2ème année de BUT Science des Données</h3>
+      <p style="color: #666; font-size: 13px;">2025 - 2028</p>
+      <ul>
+        <li>Traitement de données à des fins décisionnelles</li>
+        <li>Analyse statistique et modélisation</li>
+        <li>Développement d'outils décisionnels</li>
+      </ul>
+    </div>
+
+    <div class="carte">
+      <h3>Baccalauréat Général</h3>
+      <p style="color: #666; font-size: 13px;">Lycée du Grésivaudan • 2025</p>
+      <ul>
+        <li>Spécialités : Maths, AMC (Anglais Monde Contemporain), Physique-Chimie</li>
+        <li>Certification Cambridge : B2 écrit, C1 oral</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Compétences -->
+  <div class="section" id="competences">
+    <h2 class="titre-section">Compétences & Outils</h2>
+    
+    <div class="grille-comp">
+      <div class="col-comp">
+        <h3>Informatique</h3>
+        <ul>
+          <li><strong>Langages :</strong> Python, R, SQL, VBA</li>
+          <li><strong>Outils :</strong> Power BI, Excel, Access, RStudio, SharePoint</li>
+        </ul>
+      </div>
+
+      <div class="col-comp">
+        <h3>Langues</h3>
+        <ul>
+          <li><strong>Français :</strong> Maternelle</li>
+          <li><strong>Anglais :</strong> Niveau C1</li>
+          <li><strong>Allemand :</strong> Notions</li>
+        </ul>
+      </div>
+
+      <div class="col-comp">
+        <h3>Loisirs & Qualités</h3>
+        <ul>
+          <li>Handball (9 ans en club)</li>
+          <li>Discipline & rigueur</li>
+          <li>Capacité à travailler en équipe</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pied de page / Contact -->
+  <footer id="contact">
+    <p>Adam ALLAB — 38330 Montbonnot</p>
+    <p style="margin-top: 5px;">
+      Email : <a href="mailto:adamsaidallab@gmail.com">adamsaidallab@gmail.com</a> | 
+      <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+    </p>
+  </footer>
+
+  <!-- Petit script très simple pour afficher/masquer les détails -->
+  <script>
+    function toggleDetails(id, bouton) {
+      var element = document.getElementById(id);
+      if (element.style.display === "block") {
+        element.style.display = "none";
+        bouton.textContent = "Voir plus";
+      } else {
+        element.style.display = "block";
+        bouton.textContent = "Voir moins";
+      }
+    }
+  </script>
+
+</body>
+</html>
